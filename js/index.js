@@ -27,7 +27,7 @@ const getRegData = () => {
 
 const action = () => {
     let allDelBtn = reglist.querySelectorAll('.delete-btn');
-    
+    let allEditBtn = reglist.querySelectorAll('.edit-btn');
 
     for (let btn of allDelBtn) {
         btn.onclick = () => {
@@ -37,6 +37,17 @@ const action = () => {
             getRegData();
         }
     }
+
+    for (let btn of allEditBtn) {
+    btn.onclick = () => {
+        editIndex = btn.getAttribute("index"); 
+        nameInput.value = allRegData[editIndex].name; 
+        submitBtn.innerText = "Update";
+        let myModal = new bootstrap.Modal(document.getElementById('myModal'));
+        myModal.show();
+    }
+}
+
 
 }
 
