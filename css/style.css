@@ -1,4 +1,11 @@
 /* General Body */
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
+}
+
 body {
     background-color: rgb(185, 248, 177);
     font-family: 'Lato', sans-serif;
