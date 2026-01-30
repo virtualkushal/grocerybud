@@ -13,8 +13,9 @@ const getRegData = () => {
     allRegData.forEach((data, index) => {
         reglist.innerHTML += `
         <tr>
+        <td> <input type="checkbox" style= "transform: scale(1.5);" class="check_box"> </td>
             <td>${index + 1}</td>
-            <td>${data.name}</td>
+            <td class="item-name">${data.name}</td>
             <td>
                 <button index='${index}' class="edit-btn btn btn-sm btn-primary">Edit</button>
                 <button index='${index}' class="delete-btn btn btn-sm btn-danger">Delete</button>
@@ -28,7 +29,9 @@ const getRegData = () => {
 const action = () => {
     let allDelBtn = reglist.querySelectorAll('.delete-btn');
     let allEditBtn = reglist.querySelectorAll('.edit-btn');
+    let allCheckbox = reglist.querySelectorAll('.check_box');
 
+    
     for (let btn of allDelBtn) {
         btn.onclick = () => {
             let index = btn.getAttribute("index");
@@ -38,16 +41,27 @@ const action = () => {
         }
     }
 
+    // EDIT
     for (let btn of allEditBtn) {
-    btn.onclick = () => {
-        editIndex = btn.getAttribute("index"); 
-        nameInput.value = allRegData[editIndex].name; 
-        submitBtn.innerText = "Update";
-        let myModal = new bootstrap.Modal(document.getElementById('myModal'));
-        myModal.show();
-    }
-}
+        btn.onclick = () => {
+            editIndex = btn.getAttribute("index");
+            nameInput.value = allRegData[editIndex].name;
+            submitBtn.innerText = "Update";
 
+            let myModal = new bootstrap.Modal(document.getElementById('myModal'));
+            myModal.show();
+        
+        }
+    }
+
+    // CHECKBOX CUT EFFECT
+    allCheckbox.forEach(cb => {
+    cb.onchange = function () {
+        let itemName = this.closest("tr").querySelector(".item-name");
+
+        itemName.classList.toggle("completed", this.checked);
+    }
+});
 
 }
 
