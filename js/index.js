@@ -13,7 +13,7 @@ const getRegData = () => {
     allRegData.forEach((data, index) => {
         reglist.innerHTML += `
         <tr>
-        <td> <input type="checkbox" style= "transform: scale(1.5);" class="check_box"> </td>
+        <td> <input type="checkbox" style= "transform: scale(1.5);" class="check_box" > </td>
             <td>${index + 1}</td>
             <td class="item-name">${data.name}</td>
             <td>
@@ -86,3 +86,24 @@ regForm.onsubmit = (e) => {
 }
 
 getRegData();
+
+let deleteAllBtn = document.getElementById("delteAll_btn");
+
+deleteAllBtn.onclick = () => {
+    if (allRegData.length === 0) return; 
+
+    swal({
+        title: "Are you sure?",
+        text: "All items will be deleted!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    }).then((willDelete) => {
+        if (willDelete) {
+            localStorage.removeItem("allRegData");
+            allRegData = [];
+            getRegData();
+            swal("All items deleted!", { icon: "success" });
+        }
+    });
+};
