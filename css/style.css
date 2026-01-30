@@ -1,0 +1,68 @@
+/* General Body */
+body {
+    background-color: rgb(185, 248, 177);
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.brand-header {
+    text-align: center;
+}
+
+.logo-title {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: clamp(2rem, 6vw, 4rem);
+    color: #4CAF50;
+    margin: 0;
+    line-height: 1;
+}
+
+.logo-icon {
+    color: #FFC107;
+    transform: rotate(-20deg);
+    margin-right: 15px;
+}
+
+.logo-tagline {
+    font-size: 1rem;
+    color:#A0522D;
+    margin-top: 5px;
+    border-top: 3px solid #aecfa6;
+    display: inline-block;
+    padding-top: 8px;
+}
+
+
+.top_head {
+    background-color: #4CAF50;
+}
+
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+
+@media (max-width: 576px) {
+    .modal-lg {
+        max-width: 90%;
+    }
+    .logo-title {
+        font-size: 2.5rem;
+    }
+    .logo-icon {
+        transform: rotate(-15deg);
+        margin-right: 8px;
+    }
+    .top_head h1 {
+        font-size: 1.2rem;
+    }
+    .brand-header .logo-tagline {
+        font-size: 0.9rem;
+    }
+    .btn {
+        font-size: 0.85rem;
+    }
+}
