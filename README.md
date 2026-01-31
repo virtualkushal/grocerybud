@@ -2,9 +2,9 @@
 
 A lightweight, front-end grocery list / shopping web app built with plain HTML, CSS, and JavaScript.
 
-GroceryBud makes it easy to add, edit, check off, and remove grocery items. It's intentionally small and framework-free so you can easily customize or embed it into a larger project.
+GroceryBud makes it easy to add, edit, check off,Search and remove grocery items. It's intentionally small and framework-free so you can easily customize or embed it into a larger project.
 
-Live demo: https://github.com/virtualkushal/grocerybud (open `index.html` locally or deploy to GitHub Pages)
+Live demo: https://virtualkushal.github.io/grocerybud/ 
 
 ## Features
 
@@ -13,6 +13,7 @@ Live demo: https://github.com/virtualkushal/grocerybud (open `index.html` locall
 - Mark items as bought / toggle completion
 - Persist list locally using browser LocalStorage
 - Responsive UI (mobile-first layout)
+- Search
 
 ## Tech stack
 
